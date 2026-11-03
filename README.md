@@ -1,4 +1,4 @@
-# Playwright Automation & Recorder
+# Playwright Automation & Recorder 2
 
 Proyek automasi Playwright berbasis Node.js dengan fitur perekam skenario otomatis (*codegen*).
 
