@@ -1,0 +1,119 @@
+/* Custom Stylesheet for Dashboard Pengadaan */
+
+/* Smooth scroll & base transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* KPI Card animations */
+.kpi-card {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+}
+
+/* Custom Table scrollbar */
+.overflow-x-auto::-webkit-scrollbar {
+  height: 6px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Sorting indicators */
+th.sorted-asc i {
+  color: #2563eb !important;
+  transform: rotate(180deg);
+}
+
+th.sorted-desc i {
+  color: #2563eb !important;
+}
+
+/* Toast Notification */
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #1e293b;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 100;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast-notification.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.toast-success {
+  background-color: #065f46;
+  border-left: 4px solid #10b981;
+}
+
+.toast-error {
+  background-color: #991b1b;
+  border-left: 4px solid #ef4444;
+}
+
+.toast-info {
+  background-color: #1e293b;
+  border-left: 4px solid #3b82f6;
+}
+
+/* Modal styles */
+.modal-backdrop {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.modal-backdrop.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Print Styling */
+@media print {
+  header, footer, #btnRefresh, #btnOpenSheet, #btnOpenConfig, #autoRefreshToggle, .table-controls {
+    display: none !important;
+  }
+
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .kpi-card, .bg-white {
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+}
